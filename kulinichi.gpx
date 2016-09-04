@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/0" xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd" version="1.0" creator="gpx.py -- https://github.com/tkrajina/gpxpy">
+<author>Alexey Ryabukhin</author>
+<email>ar6@ukr.net</email>
+<wpt lat="49.903380000000006" lon="36.4783443">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9295697" lon="36.4361714">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9299176" lon="36.436886200000004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.030938500000005" lon="36.2225836">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0238863" lon="36.2241422">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.015798000000004" lon="36.221338100000004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.945129" lon="36.3627452">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9415223" lon="36.3607297">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.072969400000005" lon="36.1405108">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.100137100000005" lon="36.1309009">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.949714300000004" lon="36.3668777">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9516312" lon="36.359966">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.914816200000004" lon="36.420126200000006">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9916391" lon="36.3870242">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0211581" lon="36.2237085">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9827899" lon="36.181518000000004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0349188" lon="36.2262964">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9429092" lon="36.369428400000004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9289617" lon="36.409101">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.8400775" lon="36.6867486">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9318911" lon="36.4270465">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9203321" lon="36.4083667">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0415329" lon="36.2227662">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0369314" lon="36.2208829">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.941237" lon="36.3744336">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9854159" lon="36.2588024">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.963323700000004" lon="36.0973307">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9756992" lon="36.2595704">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.943927" lon="36.309970500000006">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9492701" lon="36.308367100000005">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.963194300000005" lon="36.285846500000005">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9461913" lon="36.260664000000006">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0162647" lon="36.2279934">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9513966" lon="36.2597614">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9442025" lon="36.3021332">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9155017" lon="36.2732055">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9914678" lon="36.1387337">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9842905" lon="36.176445400000006">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0590248" lon="36.200500000000005">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9604464" lon="36.212553">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.966535500000006" lon="36.220928300000004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9827206" lon="36.3105172">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.985691200000005" lon="36.3038851">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9865647" lon="36.2788088">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.952182900000004" lon="36.3800741">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.3701796" lon="35.8672934">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9877644" lon="36.3116399">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.009990200000004" lon="36.243254900000004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0625141" lon="36.205525800000004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.068402400000004" lon="36.2096658">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.2129041" lon="37.2532318">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.8645343" lon="36.9313434">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0053993" lon="36.2357954">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.940961" lon="36.3680578">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9788944" lon="35.759347500000004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.058730600000004" lon="36.207070200000004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.976134300000005" lon="36.102738200000005">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.187924800000005" lon="37.2753114">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.8381283" lon="36.689287900000004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0466421" lon="36.2904235">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0374953" lon="36.2900287">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0472346" lon="36.2877394">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9115217" lon="36.1739078">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.919967" lon="36.410822100000004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.91599050000001" lon="36.409059">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9994438" lon="36.2462077">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.999633" lon="36.2335094">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9195288" lon="36.278254700000005">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.960137200000005" lon="36.311712">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.8448414" lon="36.7257667">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.838332300000005" lon="36.6928408">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.793478400000005" lon="36.5922794">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9800723" lon="36.2598805">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9923852" lon="36.161517700000005">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9880013" lon="36.202249200000004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.986202600000006" lon="36.183409600000005">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9863021" lon="36.178243">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.007266800000004" lon="36.1757028">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.972762200000005" lon="36.256566500000005">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9749488" lon="36.2326629">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.979047200000004" lon="36.2213869">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.708105800000006" lon="37.6125713">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.992504100000005" lon="36.223939900000005">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.5959335" lon="36.4665101">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.918667400000004" lon="36.416726">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.02374268246387" lon="36.33564159721309">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0345288803393" lon="36.35310243402173">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.99005880501134" lon="36.35842902198822">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.987286299999994" lon="36.359260250000005">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.987521369041296" lon="36.21263043235315">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.98426315" lon="36.176463">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.03426689999999" lon="36.22114465">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.838408349999995" lon="36.054217">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.94125217988336" lon="36.37444528841711">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.951396193195066" lon="36.25971577277233">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9442021352634" lon="36.302172826094846">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.94711095" lon="36.3264693">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9715083" lon="36.3031161">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.97743861725295" lon="36.16817124522511">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.94701545939832" lon="36.3996914686964">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.94619316025797" lon="36.399087635727916">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.94508682564321" lon="36.3977084090424">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.944985867137085" lon="36.39834587226548">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.989873432329084" lon="36.25115035840634">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.194608701463785" lon="36.434646324053915">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.99706919027744" lon="36.330018242820586">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.997606458605205" lon="36.3294636446945">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.99088185" lon="36.35889205">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.985877536073104" lon="36.183084155298104">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.05431775" lon="36.204471749999996">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.05219882932015" lon="36.20479355642501">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.1324948" lon="36.418004249999996">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0847946" lon="36.38769859999999">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9845943984791" lon="36.35975323075312">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.97588948022133" lon="36.24599061047406">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.98410915426824" lon="36.18541526870093">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.89053594999999" lon="36.021462799999995">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0003388" lon="36.243008">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.973490130101304" lon="36.34588610789218">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.960373399999995" lon="36.3215326">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.06677201276317" lon="36.20829259765481">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.06563613931168" lon="36.208590220700344">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.068404659454764" lon="36.209666974278406">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.063641260496695" lon="36.205287179500864">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.05959859263745" lon="36.20309831586653">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.971993899999994" lon="36.30399385">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.98722099591125" lon="36.207158225657956">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.04710554167971" lon="36.21222765887394">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.01551486791239" lon="36.21346834739722">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9957104" lon="36.23720745">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.160144731448476" lon="37.35381467932839">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.98900845000001" lon="36.3520871">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.027505997138306" lon="36.18423419782262">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.99546146536155" lon="36.32855575135794">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.706652150000004" lon="36.36964005">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.91262755373227" lon="36.19379936892657">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.708521633376854" lon="35.87864215051064">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.00750735" lon="36.280116150000005">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.71751253516644" lon="35.85909488503461">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.03433205383722" lon="36.217917230182714">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.004096984863" lon="36.232307434082">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.029392242432" lon="36.221706390381">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.990432739258" lon="36.204936981201">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.995502471924" lon="36.236862182617">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.004638671875" lon="36.248752593994">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.980381011963" lon="36.244083404541">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.990028381348" lon="36.204898834229">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.989593505859" lon="36.246959686279">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.008892059326" lon="36.224815368652">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.922252655029" lon="36.280197143555">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.989582061768" lon="36.269119262695">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.00174331665" lon="36.270206451416">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.987533569336" lon="36.213024139404">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.007133483887" lon="36.253871917725">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.981910705566" lon="36.181175231934">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.979343414307" lon="36.257831573486">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.986869812012" lon="36.319190979004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.003421783447" lon="36.247489929199">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.930976867676" lon="36.26171875">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.007701873779" lon="36.357036590576">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.027812957764" lon="36.353950500488">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.986473083496" lon="36.177730560303">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.033622741699" lon="36.173328399658">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.982334136963" lon="36.310722351074">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.011016845703" lon="36.350658416748">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.980503082275" lon="36.186695098877">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.985176086426" lon="36.2301902771">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.991832733154" lon="36.233654022217">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.025203704834" lon="36.214260101318">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.013854980469" lon="36.247871398926">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.982086181641" lon="36.230754852295">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.024681091309" lon="36.322933197021">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.98998260498" lon="36.286346435547">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.006443023682" lon="36.240955352783">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.983436584473" lon="36.268909454346">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.992538452148" lon="36.304565429688">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.006092071533" lon="36.244464874268">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.980312347412" lon="36.243999481201">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.007015228271" lon="36.326118469238">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.038410186768" lon="36.283184051514">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.974964141846" lon="36.229473114014">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.944007873535" lon="36.2819480896">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.944957733154" lon="36.316665649414">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.992828369141" lon="36.220867156982">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.985504150391" lon="36.212299346924">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.936672210693" lon="36.241847991943">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.055160522461" lon="36.294384002686">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.026126861572" lon="36.337345123291">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.02730178833" lon="36.339588165283">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.024406433105" lon="36.333755493164">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.96834564209" lon="36.212368011475">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.955303192139" lon="36.348720550537">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.00760269165" lon="36.199081420898">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.958366394043" lon="36.361686706543">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.004489898682" lon="36.365562438965">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.970230102539" lon="36.199531555176">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.023174285889" lon="36.364524841309">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.975429534912" lon="36.281177520752">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.013946533203" lon="36.289115905762">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.040271759033" lon="36.3649559021">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.999866485596" lon="36.245796203613">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.997974395752" lon="36.317428588867">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.057598114014" lon="36.203983306885">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.953475952148" lon="36.314746856689">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.964740753174" lon="36.325637817383">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.94686126709" lon="36.262893676758">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.947566986084" lon="36.260646820068">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.965744018555" lon="36.321147918701">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.998382568359" lon="36.32984161377">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.956993103027" lon="36.321598052979">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.001472473145" lon="36.32914352417">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.962677001953" lon="36.334579467773">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.987880706787" lon="36.221542358398">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.016521453857" lon="36.329711914063">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.999568939209" lon="36.341205596924">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.996917724609" lon="36.339534759521">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.954212188721" lon="36.330501556396">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.988170623779" lon="36.342777252197">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.026824951172" lon="36.338409423828">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.034942626953" lon="36.226650238037">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.006553649902" lon="36.346035003662">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.988357543945" lon="36.349662780762">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.961246490479" lon="36.344295501709">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.995880126953" lon="36.351581573486">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.998798370361" lon="36.352996826172">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.99641418457" lon="36.351455688477">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.009811401367" lon="36.351383209229">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.939533233643" lon="36.226112365723">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.986896514893" lon="36.350891113281">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.989776611328" lon="36.351177215576">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.015781402588" lon="36.354526519775">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.017913818359" lon="36.352027893066">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.995513916016" lon="36.356967926025">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.021251678467" lon="36.356895446777">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.957172393799" lon="36.360675811768">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.039009094238" lon="36.348346710205">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.984405517578" lon="36.18826675415">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.983280181885" lon="36.185024261475">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.977321624756" lon="36.181140899658">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.082820892334" lon="36.243728637695">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.009292602539" lon="36.184288024902">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.946399688721" lon="36.188041687012">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.987110137939" lon="36.387710571289">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.983093261719" lon="36.153312683105">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.944488525391" lon="36.3971824646">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.898868560791" lon="36.18595123291">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.99055480957" lon="36.290538787842">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.991180419922" lon="36.257663726807">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.981594085693" lon="36.25594329834">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.989700317383" lon="36.301048278809">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.991306304932" lon="36.312843322754">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.011047363281" lon="36.285575866699">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.944026947021" lon="36.274955749512">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.945106506348" lon="36.269207000732">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.947643280029" lon="36.2587890625">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.038112640381" lon="36.284568786621">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.03458404541" lon="36.29322052002">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.029201507568" lon="36.300243377686">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.945049285889" lon="36.270290374756">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.017803192139" lon="36.327072143555">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.017650604248" lon="36.328147888184">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.016273498535" lon="36.331867218018">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.99662399292" lon="36.336681365967">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.953552246094" lon="36.313770294189">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.94966506958" lon="36.313861846924">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.006771087646" lon="36.332874298096">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.995994567871" lon="36.341632843018">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.992607116699" lon="36.340660095215">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.013717651367" lon="36.340614318848">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.013294219971" lon="36.341659545898">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.949230194092" lon="36.322452545166">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.025882720947" lon="36.338073730469">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.956882476807" lon="36.340404510498">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.966613769531" lon="36.21851348877">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.934642791748" lon="36.244110107422">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.022304534912" lon="36.342308044434">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.962829589844" lon="36.216281890869">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.025684356689" lon="36.337078094482">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.024364471436" lon="36.336769104004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.021743774414" lon="36.348846435547">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.010356903076" lon="36.352180480957">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.004718780518" lon="36.352745056152">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.954708099365" lon="36.212200164795">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.033561706543" lon="36.343612670898">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.027626037598" lon="36.351779937744">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.029747009277" lon="36.349784851074">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.015357971191" lon="36.357498168945">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.992504119873" lon="36.360668182373">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.955230712891" lon="36.2063331604">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.956661224365" lon="36.359294891357">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.019901275635" lon="36.360336303711">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.955219268799" lon="36.36039352417">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.041030883789" lon="36.356819152832">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.02267074585" lon="36.366119384766">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0178565979" lon="36.367820739746">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.03532409668" lon="36.360576629639">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.971874237061" lon="36.190284729004">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.912059783936" lon="36.223163604736">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.09024810791" lon="36.257701873779">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.969005584717" lon="36.18346786499">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.941200256348" lon="36.36808013916">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.936309814453" lon="36.364181518555">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.089824676514" lon="36.257030487061">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.945880889893" lon="36.378440856934">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.940238952637" lon="36.378051757813">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.99072265625" lon="36.388530731201">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.927471160889" lon="36.443214416504">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.938632965088" lon="36.382564544678">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.959266662598" lon="36.172283172607">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.876064300537" lon="36.296314239502">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.871746063232" lon="36.292518615723">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.928924560547" lon="36.390071868896">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.916164398193" lon="36.182460784912">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.94983291626" lon="36.1572265625">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.928527832031" lon="36.404628753662">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.934356689453" lon="36.409576416016">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.932582855225" lon="36.416282653809">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.951721191406" lon="36.139934539795">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.892318725586" lon="36.448501586914">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.917282104492" lon="36.411609649658">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.912200927734" lon="36.409534454346">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.934368133545" lon="36.427688598633">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.953582763672" lon="36.125373840332">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.100387573242" lon="36.133632659912">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.902927398682" lon="36.119010925293">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.892002105713" lon="36.118358612061">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.111072540283" lon="36.108837127686">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.984729766846" lon="36.06969833374">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.871410369873" lon="36.066040039063">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.99234625" lon="36.38546615">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.99641565" lon="36.34167905">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="48.8754098" lon="36.29600645">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.99033475" lon="36.2071072">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.0241495" lon="36.33444785">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.7776087" lon="36.026532">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.16405955" lon="35.52329115">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.3732571" lon="35.44436755">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.3557125" lon="35.43543575">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.02235905" lon="35.9818648">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.00906365" lon="36.1836956">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.9489759" lon="36.03089335">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.7228166" lon="37.6045427">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.71883525" lon="35.8898804">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.29645735" lon="36.93571455">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.99797705" lon="36.34087845">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.7088251" lon="37.61528305">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.10359745" lon="36.22102525">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.21134095" lon="36.32200235">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.97863905" lon="36.28589445">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.98208425" lon="36.3107569">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.07562695" lon="36.62365035">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.3940549" lon="36.21528285">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.39544345" lon="36.21352735">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.1602219" lon="35.52424905">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.16381485" lon="35.52728525">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.7769782" lon="36.8137196">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.1596326" lon="35.51518455">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.37914425" lon="37.6264027">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.8182411" lon="36.0631088">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.17006165" lon="36.5262282">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.52722005" lon="37.6846007">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.18990085" lon="37.2820615">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.19741835" lon="37.2755968">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="50.07002845" lon="36.7681801">
+<sym>Navaid, Red</sym></wpt>
+<wpt lat="49.96334755" lon="36.0969155">
+<sym>Navaid, Red</sym></wpt></gpx>

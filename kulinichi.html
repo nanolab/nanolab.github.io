@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>kulinichi</title>
+		<base target="_top"></base>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta name="geo.position" content="49.5859336; 36.5600182" />
+		<meta name="ICBM" content="49.5859336, 36.5600182" />
+	</head>
+	<body style="margin:0px;">
+		<script type="text/javascript">
+			google_api_key = ''; // Your project's Google Maps API key goes here (https://code.google.com/apis/console)
+			document.writeln('<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&amp;libraries=geometry&amp;key='+self.google_api_key+'"><'+'/script>');
+		</script>
+		
+		<!--
+			If you want to transplant this map into another Web page, by far the best method is to
+			simply include it in a IFRAME tag (see http://www.gpsvisualizer.com/faq.html#google_html).
+			But, if you must paste the code into another page, be sure to include all of these parts:
+			   1. The "div" tags that contain the map and its widgets, below
+			   2. Three sections of JavaScript code:
+			      a. The Google code (maps.google.com or googleapis.com) code, above
+			      b. "gv_options" and the code that calls a .js file on maps.gpsvisualizer.com
+			      c. The "GV_Map" function, which contains all the geographic info for the map
+		-->
+		<div style="margin-left:0px; margin-right:0px; margin-top:0px; margin-bottom:0px;">
+			<div id="gmap_div" style="width:700px; height:684px; margin:0px; margin-right:12px; background-color:#f0f0f0; float:left; overflow:hidden;">
+				<p align="center" style="font:10px Arial;">This map was created using <a target="_blank" href="http://www.gpsvisualizer.com/">GPS Visualizer</a>'s do-it-yourself geographic utilities.<br /><br />Please wait while the map data loads...</p>
+			</div>
+				
+			<div id="gv_infobox" class="gv_infobox" style="font:11px Arial; border:solid #666666 1px; background-color:#ffffff; padding:4px; overflow:auto; display:none; max-width:400px;">
+				<!-- Although GPS Visualizer didn't create an legend/info box with your map, you can use this space for something else if you'd like; enable it by setting gv_options.infobox_options.enabled to true -->
+			</div>
+
+
+
+			<div id="gv_marker_list" class="gv_marker_list" style="background-color:#ffffff; overflow:auto; display:none;"><!-- --></div>
+
+			<div id="gv_clear_margins" style="height:0px; clear:both;"><!-- clear the "float" --></div>
+		</div>
+
+		
+		<!-- begin GPS Visualizer setup script (must come after maps.google.com code) -->
+		<script type="text/javascript">
+			/* Global variables used by the GPS Visualizer functions (20160904143836): */
+			gv_options = {};
+			
+			// basic map parameters:
+			gv_options.center = [49.585933575,36.560018225];  // [latitude,longitude] - be sure to keep the square brackets
+			gv_options.zoom = 8;  // higher number means closer view; can also be 'auto' for automatic zoom/center based on map elements
+			gv_options.map_type = 'GV_HYBRID';  // popular map_type choices are 'GV_STREET', 'GV_SATELLITE', 'GV_HYBRID', 'GV_TERRAIN', 'GV_TOPO_US', 'GV_TOPO_WORLD', 'GV_OSM' (http://www.gpsvisualizer.com/misc/google_map_types.html)
+			gv_options.map_opacity = 1.00;  // number from 0 to 1
+			gv_options.full_screen = true;  // true|false: should the map fill the entire page (or frame)?
+			gv_options.width = 700;  // width of the map, in pixels
+			gv_options.height = 684;  // height of the map, in pixels
+			
+			gv_options.map_div = 'gmap_div';  // the name of the HTML "div" tag containing the map itself; usually 'gmap_div'
+			gv_options.doubleclick_zoom = true;  // true|false: zoom in when mouse is double-clicked?
+			gv_options.doubleclick_center = true;  // true|false: re-center the map on the point that was double-clicked?
+			gv_options.scroll_zoom = true; // true|false; or 'reverse' for down=in and up=out
+			gv_options.autozoom_adjustment = 0;
+			gv_options.centering_options = { 'open_info_window':true, 'partial_match':true, 'center_key':'center', 'default_zoom':null } // URL-based centering (e.g., ?center=name_of_marker&zoom=14)
+			gv_options.tilt = false; // true|false: allow Google to show 45-degree tilted aerial imagery?
+			gv_options.street_view = false; // true|false: allow Google Street View on the map
+			gv_options.animated_zoom = false; // true|false: may or may not work properly
+			gv_options.disable_google_pois = false;  // true|false: if you disable clickable POIs, you also lose the labels on parks, airports, etc.
+				
+			// widgets on the map:
+			gv_options.zoom_control = 'large'; // 'large'|'small'|'none'
+			gv_options.recenter_button = true; // true|false: is there a 'click to recenter' option in the zoom control?
+			gv_options.scale_control = true; // true|false
+			gv_options.center_coordinates = true;  // true|false: show a "center coordinates" box and crosshair?
+			gv_options.mouse_coordinates = false;  // true|false: show a "mouse coordinates" box?
+			gv_options.measurement_tools = 'separate';  // true|false|'separate' ('separate' to put a ruler outside the utilities menu)
+			gv_options.measurement_options = { visible:false, distance_color:'', area_color:'' };
+			gv_options.crosshair_hidden = true;  // true|false: hide the crosshair initially?
+			gv_options.map_opacity_control = true;  // true|false|'separate' ('separate' to put a control outside the utilities menu)
+			gv_options.map_type_control = {};  // widget to change the background map
+			  gv_options.map_type_control.style = 'menu';  // 'menu'|'none'
+			  gv_options.map_type_control.filter = false;  // true|false: when map loads, are irrelevant maps ignored?
+			  gv_options.map_type_control.excluded = [];  // comma-separated list of quoted map IDs that will never show in the list ('included' also works)
+			gv_options.infobox_options = {}; // options for a floating info box (id="gv_infobox"), which can contain anything
+			  gv_options.infobox_options.enabled = true;  // true|false: enable or disable the info box altogether
+			  gv_options.infobox_options.position = ['LEFT_TOP',52,6];  // [Google anchor name, relative x, relative y]
+			  gv_options.infobox_options.draggable = true;  // true|false: can it be moved around the screen?
+			  gv_options.infobox_options.collapsible = true;  // true|false: can it be collapsed by double-clicking its top bar?
+			gv_options.utilities_menu = true;  // true|false
+			gv_options.allow_export = false;  // true|false
+
+
+			// marker-related options:
+			gv_options.default_marker = { color:'red',icon:'googlemini',scale:1 }; // icon can be a URL, but be sure to also include size:[w,h] and optionally anchor:[x,y]
+			gv_options.marker_tooltips = true; // do the names of the markers show up when you mouse-over them?
+			gv_options.marker_shadows = true; // true|false: do the standard markers have "shadows" behind them?
+			gv_options.marker_link_target = '_blank'; // the name of the window or frame into which markers' URLs will load
+			gv_options.info_window_width = 0;  // in pixels, the width of the markers' pop-up info "bubbles" (can be overridden by 'window_width' in individual markers)
+			gv_options.thumbnail_width = 0;  // in pixels, the width of the markers' thumbnails (can be overridden by 'thumbnail_width' in individual markers)
+			gv_options.photo_size = [0,0];  // in pixels, the size of the photos in info windows (can be overridden by 'photo_width' or 'photo_size' in individual markers)
+			gv_options.hide_labels = false;  // true|false: hide labels when map first loads?
+			gv_options.labels_behind_markers = false; // true|false: are the labels behind other markers (true) or in front of them (false)?
+			gv_options.label_offset = [0,0];  // [x,y]: shift all markers' labels (positive numbers are right and down)
+			gv_options.label_centered = false;  // true|false: center labels with respect to their markers?  (label_left is also a valid option.)
+			gv_options.driving_directions = false;  // put a small "driving directions" form in each marker's pop-up window? (override with dd:true or dd:false in a marker's options)
+			gv_options.garmin_icon_set = 'gpsmap'; // 'gpsmap' are the small 16x16 icons; change it to '24x24' for larger icons
+			gv_options.marker_list_options = {};  // options for a dynamically-created list of markers
+			  gv_options.marker_list_options.enabled = false;  // true|false: enable or disable the marker list altogether
+			  gv_options.marker_list_options.floating = true;  // is the list a floating box inside the map itself?
+			  gv_options.marker_list_options.position = ['RIGHT_BOTTOM',6,38];  // floating list only: position within map
+			  gv_options.marker_list_options.min_width = 160; // minimum width, in pixels, of the floating list
+			  gv_options.marker_list_options.max_width = 160;  // maximum width
+			  gv_options.marker_list_options.min_height = 0;  // minimum height, in pixels, of the floating list
+			  gv_options.marker_list_options.max_height = 302;  // maximum height
+			  gv_options.marker_list_options.draggable = true;  // true|false, floating list only: can it be moved around the screen?
+			  gv_options.marker_list_options.collapsible = true;  // true|false, floating list only: can it be collapsed by double-clicking its top bar?
+			  gv_options.marker_list_options.include_tickmarks = false;  // true|false: are distance/time tickmarks included in the list?
+			  gv_options.marker_list_options.include_trackpoints = false;  // true|false: are "trackpoint" markers included in the list?
+			  gv_options.marker_list_options.dividers = false;  // true|false: will a thin line be drawn between each item in the list?
+			  gv_options.marker_list_options.desc = false;  // true|false: will the markers' descriptions be shown below their names in the list?
+			  gv_options.marker_list_options.icons = true;  // true|false: should the markers' icons appear to the left of their names in the list?
+			  gv_options.marker_list_options.thumbnails = false;  // true|false: should markers' thumbnails be shown in the list?
+			  gv_options.marker_list_options.folders_collapsed = false;  // true|false: do folders in the list start out in a collapsed state?
+			  gv_options.marker_list_options.folders_hidden = false;  // true|false: do folders in the list start out in a hidden state?
+			  gv_options.marker_list_options.collapsed_folders = []; // an array of folder names
+			  gv_options.marker_list_options.hidden_folders = []; // an array of folder names
+			  gv_options.marker_list_options.count_folder_items = false;  // true|false: list the number of items in each folder?
+			  gv_options.marker_list_options.wrap_names = true;  // true|false: should marker's names be allowed to wrap onto more than one line?
+			  gv_options.marker_list_options.unnamed = '[unnamed]';  // what 'name' should be assigned to  unnamed markers in the list?
+			  gv_options.marker_list_options.colors = false;  // true|false: should the names/descs of the points in the list be colorized the same as their markers?
+			  gv_options.marker_list_options.default_color = '';  // default HTML color code for the names/descs in the list
+			  gv_options.marker_list_options.limit = 0;  // how many markers to show in the list; 0 for no limit
+			  gv_options.marker_list_options.center = false;  // true|false: does the map center upon a marker when you click its name in the list?
+			  gv_options.marker_list_options.zoom = false;  // true|false: does the map zoom to a certain level when you click on a marker's name in the list?
+			  gv_options.marker_list_options.zoom_level = 13;  // if 'zoom' is true, what level should the map zoom to?
+			  gv_options.marker_list_options.info_window = true;  // true|false: do info windows pop up when the markers' names are clicked in the list?
+			  gv_options.marker_list_options.url_links = false;  // true|false: do the names in the list become instant links to the markers' URLs?
+			  gv_options.marker_list_options.toggle = false;  // true|false: does a marker disappear if you click on its name in the list?
+			  gv_options.marker_list_options.help_tooltips = false;  // true|false: do "tooltips" appear on marker names that tell you what happens when you click?
+			  gv_options.marker_list_options.id = 'gv_marker_list';  // id of a DIV tag that holds the list
+			  gv_options.marker_list_options.header = ''; // HTML code; be sure to put backslashes in front of any single quotes, and don't include any line breaks
+			  gv_options.marker_list_options.footer = ''; // HTML code
+			gv_options.marker_filter_options = {};  // options for removing waypoints that are out of the current view
+			  gv_options.marker_filter_options.enabled = false;  // true|false: should out-of-range markers be removed?
+			  gv_options.marker_filter_options.movement_threshold = 8;  // in pixels, how far the map has to move to trigger filtering
+			  gv_options.marker_filter_options.limit = 0;  // maximum number of markers to display on the map; 0 for no limit
+			  gv_options.marker_filter_options.update_list = true;  // true|false: should the marker list be updated with only the filtered markers?
+			  gv_options.marker_filter_options.sort_list_by_distance = false;  // true|false: should the marker list be sorted by distance from the center of the map?
+			  gv_options.marker_filter_options.min_zoom = 0;  // below this zoom level, don't show any markers at all
+			  gv_options.marker_filter_options.zoom_message = '';  // message to put in the marker list if the map is below the min_zoom threshold
+			gv_options.synthesize_fields = {}; // for example: {label:'{name}'} would cause all markers' names to become visible labels
+				
+			
+			// Load GPS Visualizer's Google Maps functions (this must be loaded AFTER gv_options are set):
+			if (window.location.toString().indexOf('https://') == 0) { // secure pages require secure scripts
+				document.writeln('<script src="https://gpsvisualizer.github.io/google_maps/functions3.js" type="text/javascript"><'+'/script>');
+			} else {
+				document.writeln('<script src="http://maps.gpsvisualizer.com/google_maps/functions3.js" type="text/javascript"><'+'/script>');
+			}
+			
+		</script>
+		
+		<style type="text/css">
+			/* Put any custom style definitions here (e.g., .gv_marker_info_window, .gv_marker_info_window_name, .gv_marker_list_item, .gv_tooltip, .gv_label, etc.) */
+			#gmap_div .gv_marker_info_window {
+				font-size:11px !important;
+			}
+			#gmap_div .gv_label {
+				background-color:#333333; border:1px solid black; padding:1px;
+				color:white; font:9px Verdana,sans-serif !important; font-weight:normal !important;
+				opacity:0.80; filter:alpha(opacity=80);
+			}
+			
+		</style>
+		
+		<!-- end GPSV setup script and styles; begin map-drawing script (they must be separate) -->
+		<script type="text/javascript">
+			function GV_Map() {
+			  
+				GV_Setup_Map();
+				
+				
+				
+				GV_Draw_Marker({lat:49.9033800,lon:36.4783443,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9295697,lon:36.4361714,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9299176,lon:36.4368862,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0309385,lon:36.2225836,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0238863,lon:36.2241422,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0157980,lon:36.2213381,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9451290,lon:36.3627452,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9415223,lon:36.3607297,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0729694,lon:36.1405108,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.1001371,lon:36.1309009,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9497143,lon:36.3668777,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9516312,lon:36.3599660,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9148162,lon:36.4201262,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9916391,lon:36.3870242,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0211581,lon:36.2237085,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9827899,lon:36.1815180,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0349188,lon:36.2262964,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9429092,lon:36.3694284,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9289617,lon:36.4091010,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8400775,lon:36.6867486,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9318911,lon:36.4270465,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9203321,lon:36.4083667,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0415329,lon:36.2227662,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0369314,lon:36.2208829,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9412370,lon:36.3744336,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9854159,lon:36.2588024,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9633237,lon:36.0973307,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9756992,lon:36.2595704,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9439270,lon:36.3099705,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9492701,lon:36.3083671,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9631943,lon:36.2858465,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9461913,lon:36.2606640,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0162647,lon:36.2279934,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9513966,lon:36.2597614,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9442025,lon:36.3021332,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9155017,lon:36.2732055,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9914678,lon:36.1387337,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9842905,lon:36.1764454,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0590248,lon:36.2005000,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9604464,lon:36.2125530,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9665355,lon:36.2209283,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9827206,lon:36.3105172,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9856912,lon:36.3038851,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9865647,lon:36.2788088,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9521829,lon:36.3800741,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.3701796,lon:35.8672934,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9877644,lon:36.3116399,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0099902,lon:36.2432549,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0625141,lon:36.2055258,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0684024,lon:36.2096658,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.2129041,lon:37.2532318,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8645343,lon:36.9313434,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0053993,lon:36.2357954,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9409610,lon:36.3680578,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9788944,lon:35.7593475,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0587306,lon:36.2070702,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9761343,lon:36.1027382,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.1879248,lon:37.2753114,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8381283,lon:36.6892879,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0466421,lon:36.2904235,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0374953,lon:36.2900287,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0472346,lon:36.2877394,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9115217,lon:36.1739078,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9199670,lon:36.4108221,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9159905,lon:36.4090590,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9994438,lon:36.2462077,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9996330,lon:36.2335094,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9195288,lon:36.2782547,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9601372,lon:36.3117120,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8448414,lon:36.7257667,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8383323,lon:36.6928408,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.7934784,lon:36.5922794,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9800723,lon:36.2598805,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9923852,lon:36.1615177,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9880013,lon:36.2022492,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9862026,lon:36.1834096,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9863021,lon:36.1782430,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0072668,lon:36.1757028,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9727622,lon:36.2565665,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9749488,lon:36.2326629,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9790472,lon:36.2213869,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.7081058,lon:37.6125713,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9925041,lon:36.2239399,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.5959335,lon:36.4665101,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9186674,lon:36.4167260,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0237427,lon:36.3356416,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0345289,lon:36.3531024,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9900588,lon:36.3584290,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9872863,lon:36.3592603,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9875214,lon:36.2126304,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9842631,lon:36.1764630,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0342669,lon:36.2211446,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8384083,lon:36.0542170,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9412522,lon:36.3744453,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9513962,lon:36.2597158,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9442021,lon:36.3021728,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9471110,lon:36.3264693,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9715083,lon:36.3031161,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9774386,lon:36.1681712,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9470155,lon:36.3996915,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9461932,lon:36.3990876,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9450868,lon:36.3977084,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9449859,lon:36.3983459,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9898734,lon:36.2511504,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.1946087,lon:36.4346463,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9970692,lon:36.3300182,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9976065,lon:36.3294636,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9908819,lon:36.3588921,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9858775,lon:36.1830842,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0543178,lon:36.2044717,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0521988,lon:36.2047936,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.1324948,lon:36.4180042,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0847946,lon:36.3876986,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9845944,lon:36.3597532,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9758895,lon:36.2459906,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9841092,lon:36.1854153,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8905359,lon:36.0214628,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0003388,lon:36.2430080,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9734901,lon:36.3458861,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9603734,lon:36.3215326,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0667720,lon:36.2082926,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0656361,lon:36.2085902,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0684047,lon:36.2096670,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0636413,lon:36.2052872,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0595986,lon:36.2030983,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9719939,lon:36.3039938,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9872210,lon:36.2071582,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0471055,lon:36.2122277,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0155149,lon:36.2134683,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9957104,lon:36.2372074,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.1601447,lon:37.3538147,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9890085,lon:36.3520871,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0275060,lon:36.1842342,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9954615,lon:36.3285558,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.7066522,lon:36.3696401,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9126276,lon:36.1937994,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.7085216,lon:35.8786422,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0075073,lon:36.2801162,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.7175125,lon:35.8590949,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0343321,lon:36.2179172,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0040970,lon:36.2323074,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0293922,lon:36.2217064,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9904327,lon:36.2049370,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9955025,lon:36.2368622,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0046387,lon:36.2487526,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9803810,lon:36.2440834,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9900284,lon:36.2048988,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9895935,lon:36.2469597,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0088921,lon:36.2248154,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9222527,lon:36.2801971,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9895821,lon:36.2691193,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0017433,lon:36.2702065,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9875336,lon:36.2130241,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0071335,lon:36.2538719,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9819107,lon:36.1811752,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9793434,lon:36.2578316,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9868698,lon:36.3191910,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0034218,lon:36.2474899,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9309769,lon:36.2617188,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0077019,lon:36.3570366,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0278130,lon:36.3539505,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9864731,lon:36.1777306,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0336227,lon:36.1733284,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9823341,lon:36.3107224,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0110168,lon:36.3506584,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9805031,lon:36.1866951,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9851761,lon:36.2301903,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9918327,lon:36.2336540,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0252037,lon:36.2142601,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0138550,lon:36.2478714,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9820862,lon:36.2307549,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0246811,lon:36.3229332,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9899826,lon:36.2863464,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0064430,lon:36.2409554,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9834366,lon:36.2689095,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9925385,lon:36.3045654,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0060921,lon:36.2444649,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9803123,lon:36.2439995,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0070152,lon:36.3261185,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0384102,lon:36.2831841,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9749641,lon:36.2294731,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9440079,lon:36.2819481,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9449577,lon:36.3166656,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9928284,lon:36.2208672,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9855042,lon:36.2122993,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9366722,lon:36.2418480,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0551605,lon:36.2943840,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0261269,lon:36.3373451,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0273018,lon:36.3395882,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0244064,lon:36.3337555,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9683456,lon:36.2123680,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9553032,lon:36.3487206,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0076027,lon:36.1990814,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9583664,lon:36.3616867,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0044899,lon:36.3655624,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9702301,lon:36.1995316,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0231743,lon:36.3645248,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9754295,lon:36.2811775,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0139465,lon:36.2891159,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0402718,lon:36.3649559,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9998665,lon:36.2457962,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9979744,lon:36.3174286,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0575981,lon:36.2039833,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9534760,lon:36.3147469,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9647408,lon:36.3256378,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9468613,lon:36.2628937,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9475670,lon:36.2606468,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9657440,lon:36.3211479,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9983826,lon:36.3298416,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9569931,lon:36.3215981,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0014725,lon:36.3291435,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9626770,lon:36.3345795,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9878807,lon:36.2215424,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0165215,lon:36.3297119,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9995689,lon:36.3412056,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9969177,lon:36.3395348,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9542122,lon:36.3305016,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9881706,lon:36.3427773,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0268250,lon:36.3384094,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0349426,lon:36.2266502,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0065536,lon:36.3460350,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9883575,lon:36.3496628,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9612465,lon:36.3442955,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9958801,lon:36.3515816,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9987984,lon:36.3529968,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9964142,lon:36.3514557,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0098114,lon:36.3513832,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9395332,lon:36.2261124,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9868965,lon:36.3508911,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9897766,lon:36.3511772,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0157814,lon:36.3545265,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0179138,lon:36.3520279,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9955139,lon:36.3569679,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0212517,lon:36.3568954,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9571724,lon:36.3606758,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0390091,lon:36.3483467,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9844055,lon:36.1882668,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9832802,lon:36.1850243,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9773216,lon:36.1811409,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0828209,lon:36.2437286,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0092926,lon:36.1842880,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9463997,lon:36.1880417,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9871101,lon:36.3877106,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9830933,lon:36.1533127,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9444885,lon:36.3971825,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8988686,lon:36.1859512,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9905548,lon:36.2905388,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9911804,lon:36.2576637,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9815941,lon:36.2559433,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9897003,lon:36.3010483,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9913063,lon:36.3128433,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0110474,lon:36.2855759,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9440269,lon:36.2749557,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9451065,lon:36.2692070,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9476433,lon:36.2587891,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0381126,lon:36.2845688,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0345840,lon:36.2932205,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0292015,lon:36.3002434,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9450493,lon:36.2702904,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0178032,lon:36.3270721,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0176506,lon:36.3281479,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0162735,lon:36.3318672,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9966240,lon:36.3366814,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9535522,lon:36.3137703,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9496651,lon:36.3138618,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0067711,lon:36.3328743,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9959946,lon:36.3416328,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9926071,lon:36.3406601,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0137177,lon:36.3406143,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0132942,lon:36.3416595,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9492302,lon:36.3224525,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0258827,lon:36.3380737,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9568825,lon:36.3404045,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9666138,lon:36.2185135,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9346428,lon:36.2441101,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0223045,lon:36.3423080,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9628296,lon:36.2162819,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0256844,lon:36.3370781,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0243645,lon:36.3367691,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0217438,lon:36.3488464,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0103569,lon:36.3521805,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0047188,lon:36.3527451,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9547081,lon:36.2122002,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0335617,lon:36.3436127,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0276260,lon:36.3517799,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0297470,lon:36.3497849,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0153580,lon:36.3574982,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9925041,lon:36.3606682,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9552307,lon:36.2063332,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9566612,lon:36.3592949,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0199013,lon:36.3603363,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9552193,lon:36.3603935,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0410309,lon:36.3568192,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0226707,lon:36.3661194,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0178566,lon:36.3678207,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0353241,lon:36.3605766,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9718742,lon:36.1902847,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9120598,lon:36.2231636,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0902481,lon:36.2577019,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9690056,lon:36.1834679,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9412003,lon:36.3680801,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9363098,lon:36.3641815,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0898247,lon:36.2570305,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9458809,lon:36.3784409,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9402390,lon:36.3780518,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9907227,lon:36.3885307,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9274712,lon:36.4432144,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9386330,lon:36.3825645,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9592667,lon:36.1722832,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8760643,lon:36.2963142,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8717461,lon:36.2925186,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9289246,lon:36.3900719,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9161644,lon:36.1824608,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9498329,lon:36.1572266,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9285278,lon:36.4046288,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9343567,lon:36.4095764,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9325829,lon:36.4162827,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9517212,lon:36.1399345,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8923187,lon:36.4485016,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9172821,lon:36.4116096,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9122009,lon:36.4095345,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9343681,lon:36.4276886,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9535828,lon:36.1253738,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.1003876,lon:36.1336327,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9029274,lon:36.1190109,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8920021,lon:36.1183586,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.1110725,lon:36.1088371,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9847298,lon:36.0696983,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8714104,lon:36.0660400,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9923462,lon:36.3854661,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9964157,lon:36.3416791,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:48.8754098,lon:36.2960065,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9903348,lon:36.2071072,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0241495,lon:36.3344478,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.7776087,lon:36.0265320,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.1640595,lon:35.5232911,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.3732571,lon:35.4443676,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.3557125,lon:35.4354358,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0223590,lon:35.9818648,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0090637,lon:36.1836956,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9489759,lon:36.0308933,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.7228166,lon:37.6045427,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.7188352,lon:35.8898804,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.2964573,lon:36.9357146,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9979771,lon:36.3408784,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.7088251,lon:37.6152831,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.1035975,lon:36.2210252,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.2113410,lon:36.3220023,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9786390,lon:36.2858945,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9820842,lon:36.3107569,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0756270,lon:36.6236503,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.3940549,lon:36.2152829,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.3954435,lon:36.2135273,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.1602219,lon:35.5242491,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.1638149,lon:35.5272852,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.7769782,lon:36.8137196,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.1596326,lon:35.5151846,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.3791443,lon:37.6264027,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.8182411,lon:36.0631088,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.1700617,lon:36.5262282,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.5272200,lon:37.6846007,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.1899009,lon:37.2820615,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.1974183,lon:37.2755968,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:50.0700285,lon:36.7681801,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				GV_Draw_Marker({lat:49.9633476,lon:36.0969155,name:'',desc:'',color:'',icon:'Navaid, Red'});
+				
+				
+				GV_Finish_Map();
+					
+			  
+			}
+			GV_Map(); // execute the above code
+			// http://www.gpsvisualizer.com/map_input?form=google
+		</script>
+		
+		
+		
+	</body>
+
+</html>
